@@ -23,7 +23,7 @@ namespace eTickets.Controllers
             return View(data);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
