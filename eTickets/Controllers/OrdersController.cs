@@ -35,6 +35,15 @@ namespace eTickets.Controllers
 
             return View(response);
         }
+        public async Task<IActionResult> Index()
+        {
+            //string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //string userRole = User.FindFirstValue(ClaimTypes.Role);
+
+            //var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
+            var orders = await _ordersService.GetOrdersByUserIdAsync("");
+            return View(orders);
+        }
 
         public async Task<IActionResult> AddItemToShoppingCart(int id)
         {
